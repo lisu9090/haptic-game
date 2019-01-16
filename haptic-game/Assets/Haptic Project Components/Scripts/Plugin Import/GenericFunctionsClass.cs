@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Diagnostics;
 
 public class GenericFunctionsClass : MonoBehaviour {
 
@@ -13,7 +14,7 @@ public class GenericFunctionsClass : MonoBehaviour {
 	
 	//Haptic Properties
 	private HapticProperties myHapticPropertiesScript;
-	
+    StackTrace stackTrace = new StackTrace();
 
 	//Access to script SimpleShapeManipulation
 	public HapticClassScript myHapticClassScript;
@@ -84,6 +85,7 @@ public class GenericFunctionsClass : MonoBehaviour {
 	{
 		
 		//Convert float3Array to IntPtr
+       
 		IntPtr dstPosPtr = ConverterClass.ConvertFloat3ToIntPtr(myHapticClassScript.myWorkSpacePosition);
 		
 		//Convert float3Array to IntPtr
@@ -322,7 +324,7 @@ public class GenericFunctionsClass : MonoBehaviour {
         //Convert Convert IntPtr To byte[] to String
         //string myObjStringName = ConverterClass.ConvertIntPtrToByteToString(PluginImport.GetTouchedObjectName());//PluginImport.GetTouchedObjectName() - To be deprecated
         string myObjStringName = ConverterClass.ConvertIntPtrToByteToString(PluginImport.GetTouchedObjName(1));
-        Debug.Log ("The touched object is " + myObjStringName.ToString());
+        UnityEngine.Debug.Log("The touched object is " + myObjStringName.ToString());
 		
 		//If in Manipulation Mode enable the manipulation of the selected object
 		if(PluginImport.GetMode() == 1)
@@ -451,7 +453,7 @@ public class GenericFunctionsClass : MonoBehaviour {
 			PluginImport.SetPuncturedDynamicFriction(ObjId, 0.0f);
 			PluginImport.SetMass(ObjId,0.0f);
 			PluginImport.SetFixed(ObjId,true);
-			Debug.Log ("Haptic Characteristics not set for " + obj.name);
+            UnityEngine.Debug.Log("Haptic Characteristics not set for " + obj.name);
 		}
 		else
 		{

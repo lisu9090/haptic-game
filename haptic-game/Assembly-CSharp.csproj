@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F9254AED-EF81-464E-0A38-7EC172A2C43A}</ProjectGuid>
+    <ProjectGuid>{6327E619-71D5-DCDF-6412-A35AD76D2308}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,6 +46,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Haptic Project Components\Maze Level\Scripts\BridgePart.cs" />
+     <Compile Include="Assets\Haptic Project Components\Maze Level\Scripts\ControlPoint.cs" />
+     <Compile Include="Assets\Haptic Project Components\Maze Level\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Haptic Project Components\Maze Level\Scripts\Marsian.cs" />
+     <Compile Include="Assets\Haptic Project Components\Maze Level\Scripts\Maze.cs" />
+     <Compile Include="Assets\Haptic Project Components\Maze Level\Scripts\MyScript.cs" />
+     <Compile Include="Assets\Haptic Project Components\Maze Level\Scripts\Sheep.cs" />
+     <Compile Include="Assets\Haptic Project Components\Maze Level\Scripts\Wolf.cs" />
+     <Compile Include="Assets\Haptic Project Components\Robot_arm_level\Scripts\RobotArmBehavior.cs" />
+     <Compile Include="Assets\Haptic Project Components\Robot_arm_level\Scripts\RobotMovement.cs" />
      <Compile Include="Assets\Haptic Project Components\Scripts\Converter\Converter.cs" />
      <Compile Include="Assets\Haptic Project Components\Scripts\Force Effects\ConstantForceEffect.cs" />
      <Compile Include="Assets\Haptic Project Components\Scripts\Force Effects\FrictionEffect.cs" />
@@ -70,6 +80,8 @@
      <Compile Include="Assets\Haptic Project Components\Scripts\Script Scene\SimpleShapeContact.cs" />
      <Compile Include="Assets\Haptic Project Components\Scripts\Script Scene\SimpleShapeManipulation.cs" />
      <Compile Include="Assets\Haptic Project Components\Scripts\Script Scene\SimpleShapeManipulationAndPhysics.cs" />
+     <Compile Include="Assets\WorldSkies\Demo\Scripts\LookCamera.cs" />
+     <Compile Include="Assets\WorldSkies\Demo\Scripts\SkyboxChanger.cs" />
      <None Include="Assets\Haptic Project Components\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\license.txt" />
  <Reference Include="UnityEngine.UI">

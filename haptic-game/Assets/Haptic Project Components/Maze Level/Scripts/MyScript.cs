@@ -4,16 +4,16 @@ using System;
 using System.Runtime.InteropServices;
 
 
-public class SimpleShapeManipulationAndPhysicsBlock : HapticClassScript {
+public class MyScript : HapticClassScript {
 
 
 	//Generic Haptic Functions
 	private GenericFunctionsClass myGenericFunctionsClassScript;
 	
-	//public GameObject block;
-	//const int height = 8;
+	public GameObject block;
+	const int height = 8;
 	
-	//private GameObject[] blocks;
+	private GameObject[] blocks;
 
     //Workspace Update Value
     float[] workspaceUpdateValue = new float[1];
@@ -22,15 +22,9 @@ public class SimpleShapeManipulationAndPhysicsBlock : HapticClassScript {
 
     void Awake()
 	{
-        myWorkSpacePosition[0] = 10;
-        myWorkSpaceSize[0] = 50;
-        myWorkSpaceSize[1] = 10;
-        myWorkSpaceSize[2] = 20;
 		myGenericFunctionsClassScript = transform.GetComponent<GenericFunctionsClass>();
-        
 	}
 	
-    /*
 	void makeJengaBlocks()
 	{
 		float xDistPercentage = 0.5f;
@@ -52,16 +46,17 @@ public class SimpleShapeManipulationAndPhysicsBlock : HapticClassScript {
 			}
 		}
 	}
-    */
+
 	void Start()
 	{
-		//blocks = new GameObject[height * 3];
-		//makeJengaBlocks();
+		blocks = new GameObject[height * 3];
+		makeJengaBlocks();
 
 		if(PluginImport.InitHapticDevice())
 		{
 			Debug.Log("OpenGL Context Launched");
 			Debug.Log("Haptic Device Launched");
+			
 			myGenericFunctionsClassScript.SetHapticWorkSpace();
 			myGenericFunctionsClassScript.GetHapticWorkSpace();
 
@@ -69,8 +64,8 @@ public class SimpleShapeManipulationAndPhysicsBlock : HapticClassScript {
             //PluginImport.UpdateWorkspace(myHapticCamera.transform.rotation.eulerAngles.y);  //To be deprecated
 
             //Update the Workspace as function of camera
-            //for (int i = 0; i < workspaceUpdateValue.Length; i++)
-             //   workspaceUpdateValue[i] = myHapticCamera.transform.rotation.eulerAngles.y;
+            for (int i = 0; i < workspaceUpdateValue.Length; i++)
+                workspaceUpdateValue[i] = myHapticCamera.transform.rotation.eulerAngles.y;
 
             PluginImport.UpdateHapticWorkspace(ConverterClass.ConvertFloatArrayToIntPtr(workspaceUpdateValue));
 
@@ -168,7 +163,7 @@ public class SimpleShapeManipulationAndPhysicsBlock : HapticClassScript {
 
         if (PluginImport.GetButtonState(1, 2))
 		{
-			//makeJengaBlocks();
+			makeJengaBlocks();
 		}
 		
 		const float rotSpeed = 1.0f;
