@@ -6,7 +6,7 @@ public class Marsian : MonoBehaviour
 {
     public GameObject alien;
     public GameObject bullet;
-    public float attackSpeed = 0.1f;
+    public float attackSpeed = 0.01f;
     public float bulletSpeed = 50f;
     float prevAttackSpeed;
     // Use this for initialization

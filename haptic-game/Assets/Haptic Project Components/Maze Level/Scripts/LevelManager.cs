@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public GameObject[] wolves;
+    public GameObject aliens;
 
     // Use this for initialization
     void Start()
@@ -23,5 +24,10 @@ public class LevelManager : MonoBehaviour
             wolf.GetComponent<Wolf>().killSheep();
         }
 
+    }
+
+    public void ActivateAliens()
+    {
+        aliens.SetActive(true);
     }
 }

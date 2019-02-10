@@ -11,7 +11,7 @@ public class Wolf : MonoBehaviour {
 	void Start () {
         runForSheep = false;
         wolfRigidbody = GetComponent<Rigidbody>();
-        wolfSpeed = 70;
+        wolfSpeed = 0.5f;
     }
 
     // Update is called once per frame

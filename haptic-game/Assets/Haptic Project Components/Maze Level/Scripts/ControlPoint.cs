@@ -25,8 +25,30 @@ public class ControlPoint : MonoBehaviour
     {
         if (other.gameObject.name == "Sheep")
         {
+            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+            if (gameObject.name.Split(' ')[0] == "Point1")
+            {
+                rb.constraints = RigidbodyConstraints.None;
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionZ;
+                GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().ActivateWolves();
+            }
+            if (gameObject.name.Split(' ')[0] == "Point2")
+            {
+                rb.constraints = RigidbodyConstraints.None;
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+                GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().ActivateAliens();
+            }
+            if (gameObject.name.Split(' ')[0] == "Point3")
+            {
+                rb.constraints = RigidbodyConstraints.None;
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionZ;
+            }
+            if (gameObject.name.Split(' ')[0] == "Point4")
+            {
+                rb.constraints = RigidbodyConstraints.None;
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionX;
+            }
             other.gameObject.GetComponent<Sheep>().RotateSheep(myRotation);
-            GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().ActivateWolves();
         }
     }
 }
